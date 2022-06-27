@@ -1,0 +1,360 @@
+ <!DOCTYPE html>
+<html>
+<head>
+	<audio id="audio" src="soundEffect.mp3" type="audio/mp3"></audio>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<style type="text/css">
+			.split {
+  			height: 50%;
+  			width: 100%;
+  			position: fixed;
+  			z-index: 1;
+  			left: 0;
+  			overflow-x: hidden;
+			}
+
+			.top {
+				top: 0;
+				background-color: brown;
+			}
+
+			.bottom {
+				bottom: 0;
+
+				background-color: rgb(0, 255, 0);
+			}
+
+			.grid-container {
+			  	display: grid;
+			 	grid-template-columns: auto auto auto auto;
+			 	grid-gap: 5px;
+			 	background-color: rgb(174, 117, 42);
+			  	padding: 6px;
+			}
+			
+			.grid-item {
+			  	background-color: rgba(178, 132, 71, 0.8);
+			  	border: 1px solid rgba(0, 0, 0, 0.8);
+			  	border-radius: 2px;
+			  	padding: auto;
+			  	font-size: 15px;
+			  	text-align: center;
+			}
+
+			.sloganButton {
+				background-color: rgba(50, 205, 50, 0.8);
+				border: 2px solid;
+				border-radius: 5px;
+				padding: 3px;
+				text-align: center;
+			}
+
+			.sloganButton:hover {
+				background-color: rgba(50, 205, 90, 4);
+				border-color: rgba(50, 205, 90, 4);
+			}
+
+			.inputSloganField {
+				border: 2px solid;
+				padding: 3px;
+			}
+
+			.playButton {
+				background-color: rgba(255, 255, 0, 0.8);
+				border: 2px solid;
+				border-radius: 6px;
+				margin-top: 3px;
+				padding-top: 3px;
+				padding-bottom: 3px;
+				padding-left: 30%;
+				padding-right: 30%;
+				text-align: center;
+			}
+
+			.playButton:hover {
+				background-color: rgba(230, 255, 0, 4);
+				border-color: rgba(230, 255, 0, 4);
+			}
+
+			.sloganDesign {
+				font-size: 80px;
+				text-align: center;
+				white-space: nowrap;
+				color: yellow;
+				font-family: Bradley Hand, cursive;
+				font-weight: bold;
+				position: fixed;
+				text-shadow: 3px 3px black;
+				-webkit-text-stroke: 1px black;
+				opacity: 1;
+				animation-name: sloganAnim;
+			  	animation-duration: 2s;
+			  	animation-iteration-count: 1;
+			}
+
+			@keyframes sloganAnim {
+				0% {
+					filter: brightness(100%);
+					text-shadow: 3px 3px black;
+				}
+				50% {
+					filter: brightness(140%);
+					text-shadow: 7px 7px grey;
+					transform: rotate(-5deg);
+					font-size: 80px;
+				}
+				100% {
+					filter: brightness(100%);
+					text-shadow: 3px 3px black;
+				}
+			}
+	</style>
+</head>
+
+<body onload="whenOpen()">
+	<div class="split top">
+		<div class="grid-container">
+		  <div class="grid-item">
+		  	<input type="text" class="inputSloganField" id="slogan1" />
+		  	<button class="sloganButton" id="1" onclick="saveText()">Save</button><br>
+		  	<button class="playButton" id="1" onclick="displaySlogan()">Play</button>
+		  </div>
+		  <div class="grid-item">
+		  	<input type="text" class="inputSloganField" id="slogan2" />
+		  	<button class="sloganButton" id="2" onclick="saveText()">Save</button><br>
+		  	<button class="playButton" id="2" onclick="displaySlogan()">Play</button>
+		  </div>
+		  <div class="grid-item">
+		  	<input type="text" class="inputSloganField" id="slogan3" />
+		  	<button class="sloganButton" id="3" onclick="saveText()">Save</button><br>
+		  	<button class="playButton" id="3" onclick="displaySlogan()">Play</button>
+		  </div>  
+		  <div class="grid-item">
+		  	<input type="text" class="inputSloganField" id="slogan4" />
+		  	<button class="sloganButton" id="4" onclick="saveText()">Save</button><br>
+		  	<button class="playButton" id="4" onclick="displaySlogan()">Play</button>
+		  </div> 
+		  <div class="grid-item">
+		  	<input type="text" class="inputSloganField" id="slogan5" />
+		  	<button class="sloganButton" id="5" onclick="saveText()">Save</button><br>
+		  	<button class="playButton" id="5" onclick="displaySlogan()">Play</button>
+		  </div> 
+		  <div class="grid-item">
+		  	<input type="text" class="inputSloganField" id="slogan6" />
+		  	<button class="sloganButton" id="6" onclick="saveText()">Save</button><br>
+		  	<button class="playButton" id="6" onclick="displaySlogan()">Play</button>
+		  </div> 
+		  <div class="grid-item">
+		  	<input type="text" class="inputSloganField" id="slogan7" />
+		  	<button class="sloganButton" id="7" onclick="saveText()">Save</button><br>
+		  	<button class="playButton" id="7" onclick="displaySlogan()">Play</button>
+		  </div> 
+		  <div class="grid-item">
+		  	<input type="text" class="inputSloganField" id="slogan8" />
+		  	<button class="sloganButton" id="8" onclick="saveText()">Save</button><br>
+		  	<button class="playButton" id="8" onclick="displaySlogan()">Play</button>
+		  </div> 
+		  <div class="grid-item">
+		  	<input type="text" class="inputSloganField" id="slogan9" />
+		  	<button class="sloganButton" id="9" onclick="saveText()">Save</button><br>
+		  	<button class="playButton" id="9" onclick="displaySlogan()">Play</button>
+		  </div> 
+		  <div class="grid-item">
+		  	<input type="text" class="inputSloganField" id="slogan10" />
+		  	<button class="sloganButton" id="10" onclick="saveText()">Save</button><br>
+		  	<button class="playButton" id="10" onclick="displaySlogan()">Play</button>
+		  </div> 
+		  <div class="grid-item">
+		  	<input type="text" class="inputSloganField" id="slogan11" />
+		  	<button class="sloganButton" id="11" onclick="saveText()">Save</button><br>
+		  	<button class="playButton" id="11" onclick="displaySlogan()">Play</button>
+		  </div> 
+		  <div class="grid-item">
+		  	<input type="text" class="inputSloganField" id="slogan12" />
+		  	<button class="sloganButton" id="12" onclick="saveText()">Save</button><br>
+		  	<button class="playButton" id="12" onclick="displaySlogan()">Play</button>
+		  </div>
+		   <div class="grid-item">
+		  	<input type="text" class="inputSloganField" id="slogan13" />
+		  	<button class="sloganButton" id="13" onclick="saveText()">Save</button><br>
+		  	<button class="playButton" id="13" onclick="displaySlogan()">Play</button>
+		  </div>
+		   <div class="grid-item">
+		  	<input type="text" class="inputSloganField" id="slogan14" />
+		  	<button class="sloganButton" id="14" onclick="saveText()">Save</button><br>
+		  	<button class="playButton" id="14" onclick="displaySlogan()">Play</button>
+		  </div> 
+		   <div class="grid-item">
+		  	<input type="text" class="inputSloganField" id="slogan15" />
+		  	<button class="sloganButton" id="15" onclick="saveText()">Save</button><br>
+		  	<button class="playButton" id="15" onclick="displaySlogan()">Play</button>
+		  </div>
+		   <div class="grid-item">
+		  	<input type="text" class="inputSloganField" id="slogan16" />
+		  	<button class="sloganButton" id="16" onclick="saveText()">Save</button><br>
+		  	<button class="playButton" id="16" onclick="displaySlogan()">Play</button>
+		  </div>
+		   <div class="grid-item">
+		  	<input type="text" class="inputSloganField" id="slogan17" />
+		  	<button class="sloganButton" id="17" onclick="saveText()">Save</button><br>
+		  	<button class="playButton" id="17" onclick="displaySlogan()">Play</button>
+		  </div>
+		   <div class="grid-item">
+		  	<input type="text" class="inputSloganField" id="slogan18" />
+		  	<button class="sloganButton" id="18" onclick="saveText()">Save</button><br>
+		  	<button class="playButton" id="18" onclick="displaySlogan()">Play</button>
+		  </div>
+		  <div class="grid-item">
+		  	<input type="text" class="inputSloganField" id="slogan19" />
+		  	<button class="sloganButton" id="19" onclick="saveText()">Save</button><br>
+		  	<button class="playButton" id="19" onclick="displaySlogan()">Play</button>
+		  </div>
+		   <div class="grid-item">
+		  	<input type="text" class="inputSloganField" id="slogan20" />
+		  	<button class="sloganButton" id="20" onclick="saveText()">Save</button><br>
+		  	<button class="playButton" id="20" onclick="displaySlogan()">Play</button>
+		  </div>
+		   <div class="grid-item">
+		  	<input type="text" class="inputSloganField" id="slogan21" />
+		  	<button class="sloganButton" id="21" onclick="saveText()">Save</button><br>
+		  	<button class="playButton" id="21" onclick="displaySlogan()">Play</button>
+		  </div> 
+		   <div class="grid-item">
+		  	<input type="text" class="inputSloganField" id="slogan22" />
+		  	<button class="sloganButton" id="22" onclick="saveText()">Save</button><br>
+		  	<button class="playButton" id="22" onclick="displaySlogan()">Play</button>
+		  </div>
+		   <div class="grid-item">
+		  	<input type="text" class="inputSloganField" id="slogan23" />
+		  	<button class="sloganButton" id="23" onclick="saveText()">Save</button><br>
+		  	<button class="playButton" id="23" onclick="displaySlogan()">Play</button>
+		  </div>
+		   <div class="grid-item">
+		  	<input type="text" class="inputSloganField" id="slogan24" />
+		  	<button class="sloganButton" id="24" onclick="saveText()">Save</button><br>
+		  	<button class="playButton" id="24" onclick="displaySlogan()">Play</button>
+		  </div>
+		</div>
+	</div>
+
+	<div class="split bottom">
+		<div class="sloganDesign" id="slo" >
+		</div>
+	</div>
+
+	<script>
+		var sloganText = "";
+		var sloganId = "";
+		var sloganIdCheck = 0;
+		var currentId = 0;
+		var sloganData = new Array();
+		var sloganList = new Array();
+		var status = 1;
+		var clearFade = "";
+
+		var w = screen.width;
+		var h = screen.height/2/2;
+		var randw = 0;
+		var randh = 0;
+
+		function whenOpen() {
+			sloganList = JSON.parse(localStorage.getItem("saveData"));
+			for (var i = 0; i < sloganList.length; i++) {
+				document.getElementById("slogan" + (i + 1)).value = sloganList[i];
+			}
+			sloganData = sloganList;
+		}
+
+		function saveText() {
+			sloganIdCheck = event.srcElement.id;
+			currentId = sloganIdCheck - 1;
+			sloganId = "slogan" + sloganIdCheck;
+			sloganData[currentId] = document.getElementById(sloganId).value;
+			localStorage.setItem("saveData", JSON.stringify(sloganData));
+		}
+
+		function displaySlogan() {
+			var sloItem = document.getElementById("slo");
+			currentId = event.srcElement.id;
+			animChange();
+			soundEffect();
+			if (status == 0) {
+				$("#slo").fadeIn("fast");
+				clearTimeout(clearFade);
+				status = 1;
+			}
+			randPosition();
+			document.getElementById("slo").innerHTML = sloganData[currentId - 1];
+			sloganFadeOut();
+			randColor();
+		}
+
+		function soundEffect() {
+			var audio = document.getElementById("audio");
+			audio.play();
+		}
+
+		function sloganFadeOut() {
+			clearFade = setTimeout(function() {
+				$("#slo").fadeOut("fast");
+			}, 2300);
+			status = 0;
+		}
+
+		function animChange() {
+			var el = document.getElementById("slo");
+			el.classList.remove("sloganDesign");
+			el.offsetHeight; /* trigger reflow */
+			el.classList.add("sloganDesign");
+		}
+
+		function randPosition() {
+			var status = false;
+			var sloText = document.getElementById("slo");
+			var maxW = w/4*3;
+			var minW = w/15;
+			randh = (Math.floor(Math.random() * (h-50)) + (h-120));
+			if (Math.floor(Math.random() * 3) == 0) {
+				randw = (Math.floor(Math.random() * minW) + minW);
+			}
+			else {
+				randw = (Math.floor(Math.random() * (maxW - minW)) + minW);
+			}
+			checkLanguageWords();
+			
+			sloText.style.bottom = randh + "px";
+			sloText.style.right = randw + "px";
+		}
+
+		function checkLanguageWords() {
+			var character = new Array();
+			var currentSlogan = sloganData[currentId - 1];
+			for (var i = 0; i < currentSlogan.length; i++) {
+				character[i] = currentSlogan.charAt(i);
+			}
+
+			if (character.toString().match(/[\u3400-\u9FBF]/)) {
+				if (character.length >= 9 && character.length <= 11) {
+					randw = w/4;
+				}
+				else if (character.length >= 7 && character.length <= 8) {
+					randw = w/3;
+				}
+			}
+			else {
+				if (character.length >= 15) {
+					randw = w/3;
+				}
+			}
+			
+		}
+
+		function randColor() {
+			var randomColor = ["aqua", "aquamarine", "bisque", "coral", "#00CED1", "#8A2BE2", "#DEB887", "#FF8C00", "#FF1493", "#FF69B4", "#CD5C5C", "#FFD700", "cyan", "yellow"]; //14 color
+			var rand = Math.floor(Math.random()* 13);
+
+			document.getElementById("slo").style.color = randomColor[rand];
+		}
+	</script>
+</body>
+</html> 
